@@ -14,8 +14,7 @@
 
 A cross-platform C++17 boilerplate project with ``cmake``, ``Google Benchmark`` and ``Google Test`` frameworks support.
 
-This project boilerplate is using ``git submodule`` to include ``Google Benchmark`` and ``Google Test`` so you
-need either to do
+This project boilerplate is using ``git submodule`` to include ``Google Benchmark`` and ``Google Test`` so you need either to do
     
 ```bash
 $ git clone --recursive git@github.com:AlbertZheng/cmake-gbenchmark-gtest-boilerplate.git

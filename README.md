@@ -75,7 +75,7 @@ $ cmake .. -DCMAKE_BUILD_TYPE=DEBUG \
 By default, the project will be built in ``RELEASE`` mode, and the default config of Options are:
 > option(BUILD_TESTS       "Build tests" ON)  
 > option(BUILD_BENCHMARKS  "Build benchmarks" ON)   
-> option(ENABLE_SANITIZE   "Adds sanitize flags" OFF)  
+> option(ENABLE_SANITIZE   "Add sanitize flags" OFF)  
 > option(BUILD_SHARED_LIBS "Build shared libraries (DLLs)." OFF)  
 
 If you experience the memory or ``UB`` issues in your codes, recommending you to use Google Sanitizers toolbox for checking the issues by ``-DENABLE_SANITIZE=ON`` option.

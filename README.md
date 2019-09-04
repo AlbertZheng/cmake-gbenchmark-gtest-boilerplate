@@ -77,7 +77,7 @@ By default, the project will be built in ``RELEASE`` mode, and the default confi
 > option(ENABLE_SANITIZE   "Add sanitize flags" OFF)  
 > option(BUILD_SHARED_LIBS "Build shared libraries (DLLs)." OFF)  
 
-If you experience the memory or ``UB`` issues in your codes, recommending you to use Google Sanitizers toolbox for checking the issues by ``-DENABLE_SANITIZE=ON`` option.
+If you experience the memory leak or [``Undefined Behavior``](https://en.wikipedia.org/wiki/Undefined_behavior) issues in your codes, recommending you to use Google Sanitizers toolbox for checking the issues by ``-DENABLE_SANITIZE=ON`` option.
 
 See the CMakeLists.txt file to see all the options.
 

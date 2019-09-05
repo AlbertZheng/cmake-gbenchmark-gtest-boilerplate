@@ -1,18 +1,6 @@
-# Table of Contents <!-- omit in toc -->
-
-- [C++17 boilerplate project with cmake, google benchmark and google test](#c17-boilerplate-project-with-cmake-google-benchmark-and-google-test)
-- [Organization](#organization)
-- [Build](#build)
-  - [Build Options](#build-options)
-  - [Executable commands](#executable-commands)
-- [License](#license)
-- [Contributing](#contributing)
-
-<br>
-
 # C++17 boilerplate project with cmake, google benchmark and google test
 
-A cross-platform C++17 boilerplate project with ``cmake``, ``Google Benchmark`` and ``Google Test`` frameworks support.
+A cross-platform C++17/14/11 boilerplate project with ``cmake``, ``Google Benchmark`` and ``Google Test`` frameworks support.
 
 This project boilerplate is using ``git submodule`` to include ``Google Benchmark`` and ``Google Test`` so you need either to do
     
@@ -36,26 +24,28 @@ $ git submodule update
 * **include** : has the header files of your App.
 * **test** : has the tests and related CMakeLists.txt of your App.
 * **benchmark** : has the benchmarks and related CMakeLists.txt of your App.
-* **third-party** : all the third party libraries or frameworks and related CMakeLists.txt should be put in this directory. Currently, ``Google Benchmark`` and ``Google Test`` are already there. 
-* **doc** : you can put the documents of your App in this directory.
-* **examples** : you can put the examples code of App in this directory.
-* **tools** : you can put your tools code of App in this directory.
-
-
-The main CMakeLists.txt file at the root of the project has options and further documentation.
+* **third-party** : put all the third party libraries or frameworks and related CMakeLists.txt in this directory. Currently, ``Google Benchmark`` and ``Google Test`` are already in there. 
+* **doc** : has the documents of your App in this directory if any.
+* **examples** : has the examples code of App in this directory if any.
+* **tools** : has your tools code of App in this directory if any.
 
 
 # Build
 
-On Linux/Unix, to build and make the test:
+On Linux/macOS, to build and make the test:
 
 ```bash
 $ mkdir build && cd $_
 $ cmake ..
+
 $ cmake --build .
+# or
+$ make
 ```
 
 On Windows, you can use cmake to generate Visual Studio build files with the same ``cmake ..`` command.
+
+If you prefer to ``C++14`` or ``C++11`` rather than C++17, modifing the number of the line ``set(CMAKE_CXX_STANDARD 17)`` in the root CMakeLists.txt.
 
 
 ## Build Options
@@ -77,14 +67,11 @@ By default, the project will be built in ``RELEASE`` mode, and the default confi
 > option(ENABLE_SANITIZE   "Add sanitize flags" OFF)  
 > option(BUILD_SHARED_LIBS "Build shared libraries (DLLs)." OFF)  
 
-If you experience the memory leak or [``Undefined Behavior``](https://en.wikipedia.org/wiki/Undefined_behavior) issues in your codes, recommending you to use Google Sanitizers toolbox for checking the issues by ``-DENABLE_SANITIZE=ON`` option.
-
-See the CMakeLists.txt file to see all the options.
-
+If you encounter the memory leak or [``Undefined Behavior``](https://en.wikipedia.org/wiki/Undefined_behavior) issues in your codes, recommending you to use Google Sanitizers toolbox for checking the issues by ``-DENABLE_SANITIZE=ON`` option.
 
 By default, the makefiles will build the executable, api library, tests, and benchmarks: 
-* An executable program named ``demo`` (of course: you should change the name for your App)
-* An api library named ``libdemo-api.a`` or ``libdemo-api.so`` (of course: you should change the name for your App)
+* An executable program named ``demo`` (of course, you should change the name for your App)
+* An api library named ``libdemo-api.a`` or ``libdemo-api.so`` (of course, you should change the name for your App)
 * An executable program named ``tests`` for runing unit test cases
 * An executable program named ``benchmarks`` for running benchmark test cases
 
@@ -104,7 +91,7 @@ will run the tests and benchmarks. And
 $ sudo make install
 ```
 
-will install (at least on Linux) the library and executable to your computer's path.
+will install (at least on Linux and macOS) the library and executable to your computer's path.
 
 
 # License
